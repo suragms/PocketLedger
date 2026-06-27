@@ -17,13 +17,8 @@ class Validators {
     if (value == null || value.isEmpty) {
       return 'Password is required';
     }
-    if (value.length < 8) {
-      return 'Password must be at least 8 characters long';
-    }
-    final hasLetter = RegExp(r'[a-zA-Z]').hasMatch(value);
-    final hasNumber = RegExp(r'[0-9]').hasMatch(value);
-    if (!hasLetter || !hasNumber) {
-      return 'Password must contain at least 1 letter and 1 number';
+    if (value.length < 6) {
+      return 'Password must be at least 6 characters long';
     }
     return null;
   }

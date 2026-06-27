@@ -18,14 +18,12 @@ void main() {
 
     test('Password validator should enforce constraints', () {
       expect(Validators.validatePassword(''), 'Password is required');
-      expect(Validators.validatePassword('short'), 'Password must be at least 8 characters long');
-      expect(Validators.validatePassword('onlyletters'), 'Password must contain at least 1 letter and 1 number');
-      expect(Validators.validatePassword('12345678'), 'Password must contain at least 1 letter and 1 number');
+      expect(Validators.validatePassword('short'), 'Password must be at least 6 characters long');
     });
 
     test('Password validator should accept valid passwords', () {
-      expect(Validators.validatePassword('pass1234'), null);
-      expect(Validators.validatePassword('SecurePassword88!'), null);
+      expect(Validators.validatePassword('123456'), null);
+      expect(Validators.validatePassword('duraaaa'), null);
     });
 
     test('Confirm Password validator should check equality', () {
